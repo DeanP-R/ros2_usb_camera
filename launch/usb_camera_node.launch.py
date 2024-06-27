@@ -33,7 +33,7 @@ def generate_launch_description():
     return LaunchDescription([
         DeclareLaunchArgument(
             'camera_calibration_file',
-            default_value='file://' + get_package_share_directory('usb_camera_driver') + '/config/camera.yaml'),
+            default_value='file:///ros2_ws/src/ros2_usb_camera/config/config.yaml',
         Node(
             package='usb_camera_driver',
             executable='usb_camera_driver_node',
@@ -43,3 +43,4 @@ def generate_launch_description():
             ]
         )
     ])
+# --ros-args --params-file    /ros2_ws/src/ros2_usb_camera/config/config.yaml
